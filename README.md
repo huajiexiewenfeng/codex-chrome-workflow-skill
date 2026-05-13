@@ -2,17 +2,17 @@
 
 中文说明见：[README.zh-CN.md](README.zh-CN.md)
 
-This repository contains a Codex Skill for Chrome-backed browser workflow automation.
+A Codex Skill for Chrome-backed workflow automation.
 
-It focuses on turning repetitive enterprise web workflows into reusable, rule-driven, correctable Skill instructions.
+This repository is intended to be installed by `npx skills add`:
 
-Typical use cases:
+```bash
+npx skills add https://github.com/huajiexiewenfeng/codex-chrome-workflow-skill
+```
 
-- Internal OA / timesheet systems that require a real Chrome login session
-- Excel-based work-plan synchronization
-- Task creation and work-hour registration
-- Duplicate-date checks
-- Missing work-hour backfill with user confirmation
+Before first use, ask the Agent to run the configuration workflow and create a local `config.json`.
 
-Do not commit real internal URLs, employee IDs, project IDs, or private configuration. Copy `config.example.json` to `config.json` locally and keep it private.
+Users should not manually run the helper scripts during normal use. Scripts such as `scripts/extract_month_tasks.py` are internal helpers for the Agent workflow.
+
+Do not commit real internal URLs, employee IDs, project IDs, or private configuration.
 

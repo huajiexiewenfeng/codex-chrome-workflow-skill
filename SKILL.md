@@ -15,6 +15,8 @@ The goal is not just browser clicking. The goal is to turn implicit human workfl
 
 Before running, read `config.json` in this skill directory. If it does not exist, copy `config.example.json` and fill in local values.
 
+For first-time setup, guide the user to run the configuration workflow first. The user should provide local Excel paths, project/stage names, owner, reviewer, role, and monthly parent template through the agent. Do not require the user to manually edit files unless they prefer doing so.
+
 Configuration should define:
 
 - Excel work-plan glob/path
@@ -38,7 +40,7 @@ Never commit real internal URLs, employee IDs, project IDs, or private paths to 
 
 ## Extract Monthly Excel Tasks
 
-Run:
+The agent should run the helper script internally when it needs to extract monthly Excel rows:
 
 ```powershell
 python scripts/extract_month_tasks.py --month <month> --year <year>
@@ -49,7 +51,7 @@ The script returns:
 - `task_names`: de-duplicated task names in workbook order
 - `rows`: source rows with file, sheet, dates, owner, reviewer, description, acceptance criteria, and status
 
-Use `--pattern` to override the configured Excel glob.
+Users normally do not run this command manually. It is part of the Skill workflow.
 
 ## Monthly Workflow Pattern
 
@@ -118,4 +120,3 @@ When the user says:
 - "Ask before auto-filling missing dates"
 
 Update the Skill so the correction becomes the next run's default behavior.
-
