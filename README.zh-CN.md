@@ -46,6 +46,9 @@ npx skills add https://github.com/huajiexiewenfeng/codex-chrome-workflow-skill
 ```text
 使用配置技能，帮我配置 codex-chrome-workflow-skill：
 Excel 路径是 D:\work-plans\*.xlsx，
+OA 登录地址是 https://sso.example.com/login，
+OA 首页地址是 https://oa.example.com，
+任务/工时模块地址是 https://oa.example.com/tasks，
 项目名称是 xxx，
 阶段是 xxx，
 负责人是 xxx，
@@ -56,9 +59,26 @@ Excel 路径是 D:\work-plans\*.xlsx，
 
 - 创建或更新本地 `config.json`
 - 写入 Excel 路径
+- 写入 OA / SSO / 任务模块入口地址
 - 写入项目、阶段、月度父任务模板
 - 写入负责人、审核人、资源角色等默认值
 - 确保真实内部信息只存在于本地配置，不进入公开仓库
+
+配置中的浏览器入口字段示例：
+
+```json
+"browser": {
+  "login_url": "https://sso.example.com/login",
+  "oa_home_url": "https://oa.example.com",
+  "task_module_url": "https://oa.example.com/tasks"
+}
+```
+
+字段含义：
+
+- `login_url`：SSO 或 OA 登录入口
+- `oa_home_url`：OA 首页或工作台入口
+- `task_module_url`：任务 / 工时模块入口
 
 ## 使用方式
 
@@ -164,4 +184,3 @@ python scripts/extract_month_tasks.py --month 3 --year 2026
 ## 许可
 
 见 [LICENSE](LICENSE)。
-

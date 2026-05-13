@@ -10,9 +10,16 @@ This repository is intended to be installed by `npx skills add`:
 npx skills add https://github.com/huajiexiewenfeng/codex-chrome-workflow-skill
 ```
 
-Before first use, ask the Agent to run the configuration workflow and create a local `config.json`.
+Before first use, ask the Agent to run the configuration workflow and create a local `config.json`, including Excel paths and browser entry URLs:
+
+```json
+"browser": {
+  "login_url": "https://sso.example.com/login",
+  "oa_home_url": "https://oa.example.com",
+  "task_module_url": "https://oa.example.com/tasks"
+}
+```
 
 Users should not manually run the helper scripts during normal use. Scripts such as `scripts/extract_month_tasks.py` are internal helpers for the Agent workflow.
 
 Do not commit real internal URLs, employee IDs, project IDs, or private configuration.
-

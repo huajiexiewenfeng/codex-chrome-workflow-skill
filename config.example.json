@@ -2,6 +2,11 @@
   "excel_pattern": "D:\\\\work-plans\\\\*.xlsx",
   "default_year": 2026,
   "oa_system_name": "OA 工时系统",
+  "browser": {
+    "login_url": "https://sso.example.com/login",
+    "oa_home_url": "https://oa.example.com",
+    "task_module_url": "https://oa.example.com/tasks"
+  },
   "project_name": "示例项目",
   "stage_name": "S2-2026",
   "monthly_parent_template": "示例项目 {month} 月功能开发与缺陷修改",

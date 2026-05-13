@@ -15,13 +15,17 @@ The goal is not just browser clicking. The goal is to turn implicit human workfl
 
 Before running, read `config.json` in this skill directory. If it does not exist, copy `config.example.json` and fill in local values.
 
-For first-time setup, guide the user to run the configuration workflow first. The user should provide local Excel paths, project/stage names, owner, reviewer, role, and monthly parent template through the agent. Do not require the user to manually edit files unless they prefer doing so.
+For first-time setup, guide the user to run the configuration workflow first. The user should provide local Excel paths, browser/OA entry URLs, project/stage names, owner, reviewer, role, and monthly parent template through the agent. Do not require the user to manually edit files unless they prefer doing so.
 
 Configuration should define:
 
 - Excel work-plan glob/path
 - Default year
 - OA/project/stage names
+- Browser entry URLs:
+  - `browser.login_url`: SSO or OA login URL
+  - `browser.oa_home_url`: OA home/workbench URL
+  - `browser.task_module_url`: task or work-hour module URL
 - Monthly parent task template
 - Default task type
 - Resource role
@@ -33,6 +37,7 @@ Never commit real internal URLs, employee IDs, project IDs, or private paths to 
 
 ## Browser Automation
 
+- Read browser entry URLs from `config.json` before navigating. Prefer `browser.task_module_url` when it is available, otherwise use `browser.oa_home_url` or `browser.login_url` and navigate from there.
 - Use the Codex Chrome plugin for enterprise browser workflows that require the user's real Chrome session, cookies, SSO login state, or extension-backed tab control.
 - Do not silently fall back to an isolated in-app browser for internal systems. It may not have the required login state.
 - If the Chrome extension connection fails, stop and ask the user to repair or enable the Codex Chrome Extension.
