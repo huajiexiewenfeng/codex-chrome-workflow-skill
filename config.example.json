@@ -1,0 +1,39 @@
+{
+  "excel_pattern": "D:\\\\work-plans\\\\*.xlsx",
+  "default_year": 2026,
+  "oa_system_name": "OA 工时系统",
+  "project_name": "示例项目",
+  "stage_name": "S2-2026",
+  "monthly_parent_template": "示例项目 {month} 月功能开发与缺陷修改",
+  "task_type": "任务",
+  "resource_role": "软件PL",
+  "owner": {
+    "name": "张三",
+    "employee_id": "EMP000001"
+  },
+  "reviewer": {
+    "name": "李四",
+    "employee_id": "EMP000002"
+  },
+  "columns": {
+    "sequence": "序号",
+    "task_name": "任务名称",
+    "task_type": "任务类型",
+    "start_date": "计划开始日期",
+    "end_date": "计划完成日期",
+    "estimate": "估计工作量",
+    "owner": "责任人",
+    "reviewer": "审核人",
+    "participants": "参与人",
+    "description": "任务描述",
+    "acceptance": "验收标准",
+    "status": "完成情况"
+  },
+  "planning_markers": [
+    "下周计划",
+    "下周任务",
+    "后续计划",
+    "后续任务"
+  ]
+}
+
